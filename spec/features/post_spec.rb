@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 describe 'posts navigation and creation' do
-  describe 'creation' do
+
+   describe 'creation' do
     it 'can register with full set of user attributes' do
       visit "/posts/new"
 
@@ -12,6 +13,10 @@ describe 'posts navigation and creation' do
 
       expect(page).to have_content("successfully")
     end
+  end
+  it 'has a new form that can be reached succesfully' do
+    visit new_post_path
+    expect(page.status_code).to equal(200)
   end
 
   describe 'index' do
