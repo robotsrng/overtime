@@ -9,3 +9,4 @@
 100.times do |post|
   Post.create([{date: Date.today, rationale: "#{post} Content"}])
 end
+User.create([{email: "a@a", username: "a", first_name: 'Shane', last_name: 'Ryan', password: 'asdfasdf', password_confirmation: 'asdfasdf'}])

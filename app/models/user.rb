@@ -7,4 +7,5 @@ class User < ApplicationRecord
   validates_presence_of :first_name, :last_name
   validates :username, uniqueness: true, presence: true, format: { with: /\A[a-zA-Z]+([a-zA-Z]|\d)*\Z/ }
 
+  has_many :posts
 end
