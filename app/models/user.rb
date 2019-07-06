@@ -8,4 +8,8 @@ class User < ApplicationRecord
   validates :username, uniqueness: true, presence: true, format: { with: /\A[a-zA-Z]+([a-zA-Z]|\d)*\Z/ }
 
   has_many :posts
+
+  def full_name
+    last_name + ', ' + first_name[0] + '.'
+  end
 end
